@@ -147,3 +147,4 @@ whichcraft==0.6.1
 whitenoise==5.0.1
 widgetsnbextension==3.5.1
 wrapt==1.11.2
+whitenoise==3.2
