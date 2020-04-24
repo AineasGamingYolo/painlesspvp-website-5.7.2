@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if perms.can_add_post %}
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Blog Post</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+    {% else %}
+    <h2>You do not have permission to access this page!</h2>
+    <div class="border-top pt-3">
+        <a class="ml-2" href="{% url 'blog-home' %}">Go back to home</a>
+    </div>
+    {% endif %}
+{% endblock content %}

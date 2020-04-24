@@ -1,0 +1,3 @@
+RewriteEngine On
+            RewriteCond %{HTTP_HOST} ^painlesspvp.ml$
+            RewriteRule ^$ https://painlesspvp.ml/index/ [L,R=301]

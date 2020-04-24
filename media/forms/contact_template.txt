@@ -1,0 +1,10 @@
+Contact Name:
+{{ contact_name }}
+
+Email:
+{{ contact_email }}
+
+Message:
+{{ form_msg|safe|striptags }}
+
+This is a confirmed email sended by PainLessPvP.

@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if user.is_authenticated %}
+    <h2>You are already logged in! Log out to log in to another account first!</h2>
+    <div class="border-top pt-3">
+        <a class="ml-2" href="{% url 'blog-home' %}">Back to home</a>
+        <a class="ml-2" href="{% url 'logout' %}">Logout</a>
+    </div>
+    {% else %}
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Log In</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <style>
+                        .g-recaptcha{
+                            margin-bottom: 10px;
+                        }
+                    </style>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <div class="g-recaptcha" data-sitekey="6LfCbOkUAAAAABdOaaPpp-nOwajwCqP5Yvy3cui1"></div>
+                
+                    <button class="btn btn-outline-info" type="submit">Log In</button>
+                    <small class="text-muted ml-2">
+                        <a href="{% url 'password_reset' %}">Forgot your password?</a>
+                    </small>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">New? <a class="ml-2" href="{% url 'register' %}">Register Now!</a></small>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

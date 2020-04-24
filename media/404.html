@@ -1,0 +1,30 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>PainLessPvP | Page Not Found</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/404.css' %}">
+  <script src="{% static 'blog/404.js' %}"></script>
+</head>
+    <body>
+
+                    <div class="error">
+                        <div class="container-floud">
+                            <div class="col-xs-12 ground-color text-center">
+                                <div class="errorPage">
+                                    <div class="clip"><div class="shadow"><span class="digit numberThree"></span></div></div>
+                                    <div class="clip"><div class="shadow"><span class="digit numberTwo"></span></div></div>
+                                    <div class="clip"><div class="shadow"><span class="digit numberOne"></span></div></div>
+                                </div>
+                                <h2>Sorry! Page not found</h2>
+                                <a href="{% url 'blog-home' %}">Go To Homepage</a>
+                            </div>
+                        </div>
+                    </div>
+    </body>
+</html>
+{% endblock content %}
