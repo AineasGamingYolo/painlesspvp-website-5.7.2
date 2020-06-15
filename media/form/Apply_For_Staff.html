@@ -1,0 +1,355 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>PainLessPvP | Apply for Staff</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/ApplyForStaff/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method="post">
+            {% csrf_token %}
+				<span class="contact100-form-title">
+					Apply for Staff
+				</span>
+
+                <!-- Base Questions -->
+
+                 {{ form.non_field_errors }}
+                <div class="wrap-input100 input100-select">
+					<span id="span_id_rank_choices" class="label-input100">What are you applying for?</span>
+					<div id="div_id_rank_choices">
+                    {{ form.rank_choices.errors }}
+                        <label for="{{ form.rank_choices.id_for_label }}"></label>
+                    {{ form.rank_choices }}
+                    </div>
+
+                    <span id="span2_id_rank_choices" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_name" class="wrap-input100 input100-select">
+					<span id="span_id_name" class="label-input100">What is your name?</span>
+					<div id="div_id_name">
+                    {{ form.name.errors }}
+                        <label for="{{ form.name.id_for_label }}"></label>
+                    {{ form.name }}
+                    </div>
+
+                    <span id="span2_id_name" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_email" class="wrap-input100 input100-select">
+					<span id="span_id_email" class="label-input100">What is your email?</span>
+					<div id="div_id_email">
+                    {{ form.email.errors }}
+                        <label for="{{ form.email.id_for_label }}"></label>
+                    {{ form.email }}
+                    </div>
+
+                    <span id="span2_id_email" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_ign" class="wrap-input100 input100-select">
+					<span id="span_id_ign" class="label-input100">What is your Minecraft IGN (In-Game Name)?</span>
+					<div id="div_id_ign">
+                    {{ form.ign.errors }}
+                        <label for="{{ form.ign.id_for_label }}"></label>
+                    {{ form.ign }}
+                    </div>
+
+                    <span id="span2_id_ign" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_age" class="wrap-input100 input100-select">
+					<span id="span_id_age" class="label-input100">How old are you?</span>
+					<div id="div_id_age">
+                    {{ form.age.errors }}
+                        <label for="{{ form.age.id_for_label }}"></label>
+                    {{ form.age }}
+                    </div>
+
+                    <span id="span2_id_age" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_timezone" class="wrap-input100 input100-select">
+					<span id="span_id_timezone" class="label-input100">In what timezone do you live in?</span>
+					<div id="div_id_timezone">
+                    {{ form.timezone.errors }}
+                        <label for="{{ form.timezone.id_for_label }}"></label>
+                    {{ form.timezone }}
+                    </div>
+
+                    <span id="span2_id_timezone" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_time_spend" class="wrap-input100 input100-select">
+					<span id="span_id_time_spend" class="label-input100">How much time did you spend on our server?</span>
+					<div id="div_id_time_spend">
+                    {{ form.time_spend.errors }}
+                        <label for="{{ form.time_spend.id_for_label }}"></label>
+                    {{ form.time_spend }}
+                    </div>
+
+                    <span id="span2_id_time_spend" class="focus-input100"></span>
+
+                    </div>
+
+                <div id="div1_id_why_staff" class="wrap-input100 input100-select">
+					<span id="span_id_why_staff" class="label-input100">Why do you want to be staff on our server?</span>
+					<div id="div_id_why_staff">
+                    {{ form.why_do_u_want_to_be_staff.errors }}
+                        <label for="{{ form.why_do_u_want_to_be_staff.id_for_label }}"></label>
+                    {{ form.why_do_u_want_to_be_staff }}
+                    </div>
+
+                    <span id="span2_id_why_staff" class="focus-input100"></span>
+
+                    </div>
+
+                    <div id="div1_id_why_us" class="wrap-input100 input100-select">
+					<span id="span_id_why_us" class="label-input100">Why did you choose us?</span>
+					<div id="div_id_why_us">
+                    {{ form.why_us.errors }}
+                        <label for="{{ form.why_us.id_for_label }}"></label>
+                    {{ form.why_us }}
+                    </div>
+
+                    <span id="span2_id_why_us" class="focus-input100"></span>
+
+                    </div>
+                    <!-- /Base Questions -->
+
+                    <!-- Dev Questions -->
+
+                    <div id="div1_id_kind_of_dev" class="wrap-input100 input100-select">
+					<span id="span_id_kind_of_dev" class="label-input100">What kind of developer are you?</span>
+					<div id="div_id_kind_of_dev">
+                    {{ form.dev_kind_of_dev.errors }}
+                        <label for="{{ form.dev_kind_of_dev.id_for_label }}"></label>
+                    {{ form.dev_kind_of_dev }}
+                    </div>
+
+                    <span id="span2_id_kind_of_dev" class="focus-input100"></span>
+
+                    </div>
+
+                <div id="div_id_dev_creations" class="wrap-input100 input100-select">
+					<span id="span_id_dev_creations" class="label-input100">What are some of your best creations? (provide links if possible and proof of ownership)</span>
+					<div id="div1_id_dev_creations">
+                    {{ form.dev_creations.errors }}
+                        <label for="{{ form.dev_creations.id_for_label }}"></label>
+                    {{ form.dev_creations }}
+
+					</div>
+
+					<span id="span2_id_dev_creations" class="focus-input100"></span>
+				</div>
+
+                    <!-- /Dev Questions -->
+
+                    <!-- Mod Questions -->
+
+
+                        <div id="div1_id_deal_case" class="wrap-input100 input100-select">
+					<span id="span_id_deal_case" class="label-input100">How will you deal with a case?</span>
+					<div id="div_id_deal_case">
+                    {{ form.mod_how_will_deal_with_a_case.errors }}
+                        <label for="{{ form.mod_how_will_deal_with_a_case.id_for_label }}"></label>
+                    {{ form.mod_how_will_deal_with_a_case }}
+
+					</div>
+
+					<span id="span2_id_deal_case" class="focus-input100"></span>
+				</div>
+
+                    <div id="div_id_mod_previous_experiences" class="wrap-input100 input100-select">
+					<span id="span_id_mod_previous_experiences" class="label-input100">What are your previous experiences?</span>
+					<div id="div1_id_mod_previous_experiences">
+                    {{ form.mod_previous_experiences.errors }}
+                        <label for="{{ form.mod_previous_experiences.id_for_label }}"></label>
+                    {{ form.mod_previous_experiences }}
+
+					</div>
+
+					<span id="span2_id_mod_previous_experiences" class="focus-input100"></span>
+				</div>
+
+                    <!-- /Mod Questions -->
+
+                <!-- Helper Questions -->
+
+                <div id="div1_id_helper_deal_case" class="wrap-input100 input100-select">
+					<span id="span_id_helper_deal_case" class="label-input100">How will you deal with a case?</span>
+					<div id="div_id_helper_deal_case">
+                    {{ form.helper_how_will_deal_with_a_case.errors }}
+                        <label for="{{ form.helper_how_will_deal_with_a_case.id_for_label }}"></label>
+                    {{ form.helper_how_will_deal_with_a_case }}
+
+					</div>
+
+					<span id="span2_id_helper_deal_case" class="focus-input100"></span>
+				</div>
+
+                <div id="div_id_helper_previous_experiences" class="wrap-input100 input100-select">
+					<span id="span_id_helper_previous_experiences" class="label-input100">What are your previous experiences?</span>
+					<div id="div1_id_helper_previous_experiences">
+                    {{ form.helper_previous_experiences.errors }}
+                        <label for="{{ form.helper_previous_experiences.id_for_label }}"></label>
+                    {{ form.helper_previous_experiences }}
+
+					</div>
+
+					<span id="span2_id_helper_previous_experiences" class="focus-input100"></span>
+				</div>
+
+                <!-- /Helper Questions -->
+
+
+                <!-- Builder Questions -->
+
+                <div id="div1_id_builder_previous_experiences" class="wrap-input100 input100-select">
+					<span id="span_id_builder_previous_experiences" class="label-input100">What are your previous experiences?</span>
+					<div id="div_id_builder_previous_experiences">
+                    {{ form.builder_previous_build_experiences.errors }}
+                        <label for="{{ form.builder_previous_build_experiences.id_for_label }}"></label>
+                    {{ form.builder_previous_build_experiences }}
+
+					</div>
+
+					<span id="span2_id_builder_previous_experiences" class="focus-input100"></span>
+				</div>
+
+                <div id="div1_id_builder_best_builds" class="wrap-input100 input100-select">
+					<span id="span_id_builder_best_builds" class="label-input100">What are one of your best builds? (provide link to screenshot)</span>
+					<div id="div_id_builder_best_builds">
+                    {{ form.builder_one_of_best_builds.errors }}
+                        <label for="{{ form.builder_one_of_best_builds.id_for_label }}"></label>
+                    {{ form.builder_one_of_best_builds }}
+
+					</div>
+
+					<span id="span2_id_builder_best_builds" class="focus-input100"></span>
+				</div>
+
+                <!-- /Builder Questions -->
+
+
+                    <!--
+                                    <div class="wrap-input100 input100-select">
+                                        <span class="label-input100">Budget</span>
+                                        <div>
+                                            <select class="selection-2" name="budget">
+                                                <option>Select Budget</option>
+                                                <option>1500 $</option>
+                                                <option>2000 $</option>
+                                                <option>2500 $</option>
+                                            </select>
+                                        </div>
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" data-validate = "Message is required">
+                                        <span class="label-input100">Message</span>
+                                        <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+                                        <span class="focus-input100"></span>
+                                    </div>
+                    -->
+
+                <div id="div1_id_captcha" class="wrap-input100 input100-select">
+					<span id="span_id_captcha" class="label-input100">Verify that you're a human</span>
+					<div id="div_id_captcha">
+
+                    <style>
+                        .g-recaptcha{
+                            margin-top: 10px;
+                            margin-bottom: 5px;
+                        }
+                    </style>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <div class="g-recaptcha" data-sitekey="6LfCbOkUAAAAABdOaaPpp-nOwajwCqP5Yvy3cui1"></div>
+
+					</div>
+
+					<span id="span2_id_captcha" class="focus-input100"></span>
+				</div>
+    			<!--	<div class="container-contact1-form-btn">
+-->
+				<div id="div_id_button" class="container-contact100-form-btn">
+					<div id="div2_id_button" class="wrap-contact100-form-btn">
+						<div id="div3_id_button" class="contact100-form-bgbtn"></div>
+						<button type="submit" id="button_id_button" class="contact100-form-btn">
+							<span id="span_id_button">
+                                Submit
+
+								<i id="i_id_button" class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'forms/ApplyForStaff/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+
+  <!-- <script src="{% static 'forms/ApplyForStaff/js/rank_questions.js' %}"></script>
+-->
+	<script src="{% static 'forms/ApplyForStaff/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/ApplyForStaff/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'forms/ApplyForStaff/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/ApplyForStaff/vendor/select2/select2.min.js' %}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/ApplyForStaff/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'forms/ApplyForStaff/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/ApplyForStaff/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="'forms/ApplyForStaff/js/main.js'"></script>
+
+
+</body>
+</html>

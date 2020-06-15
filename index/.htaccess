@@ -5,8 +5,6 @@ RewriteRule ^(admin_media/.*)$ - [L]
 RewriteRule ^(dispatch\.wsgi/.*)$ - [L]
 RewriteRule ^(.*)$ /index/dispatch.wsgi/$1 [QSA,PT,L]
 
-RewriteEngine On
-# Check for mime types commonly accepted by mobile devices
-RewriteCond %{HTTP_ACCEPT} "text\/vnd\.wap\.wml|application\/vnd\.wap\.xhtml\+xml" [NC]
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^ https://m.painlesspvp.ml%{REQUEST_URI} [R,L]
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>

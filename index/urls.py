@@ -36,7 +36,8 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
     path('', include('blog.urls')),
-    path('contactus/', forms_views.ContactUs, name='contactus')
+    path('contactus/', forms_views.ContactUs, name='contactus'),
+    path('apply/', forms_views.ApplyForStaff, name='applyforstaff')
 ]
 
 #handler404 = 'blog.views.handler404'

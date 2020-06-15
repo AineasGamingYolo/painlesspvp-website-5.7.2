@@ -1,3 +1,5 @@
-RewriteEngine On
-            RewriteCond %{HTTP_HOST} ^painlesspvp.ml$
-            RewriteRule ^$ https://painlesspvp.ml/index/ [L,R=301]
+RedirectMatch 301 ^/$   https://painlesspvp.ml/index/
+
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>

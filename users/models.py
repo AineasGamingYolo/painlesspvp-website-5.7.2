@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 from PIL import Image
 #from .forms.UserRegisterForm import ign
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    #ign = models.CharField(max_length=16, default='None')
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='default_prof_pic.jpg', upload_to='profile_pics')
        
 
     def __str__(self):

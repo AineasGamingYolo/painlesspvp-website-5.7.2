@@ -1,31 +1,20 @@
-from django.shortcuts import render, redirect
+from django.contrib import messages
+import requests
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from .forms import UserRegisterForm
-from django.contrib.auth.models import User
-from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
-from django.utils.encoding import force_text
-from django.contrib.auth import login
-from django.views.generic import View, UpdateView
-from .forms import UserRegisterForm
-from django.utils.encoding import force_bytes, force_text
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.core.mail import EmailMessage
-from django.conf import settings
-from .decorators import check_recaptcha
-import requests
 
-#@check_recaptcha
+from .forms import UserRegisterForm
+from .forms import UserUpdateForm, ProfileUpdateForm
+
+
+# @check_recaptcha
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        if form.is_valid():# and request.recaptcha_is_valid:
-            #form = UserRegisterForm(request.POST)
+        if form.is_valid():  # and request.recaptcha_is_valid:
+            # form = UserRegisterForm(request.POST)
             ''' Begin reCAPTCHA validation '''
             recaptcha_response = request.POST.get('g-recaptcha-response')
             data = {
@@ -36,10 +25,10 @@ def register(request):
             result = r.json()
             ''' End reCAPTCHA validation '''
             if result['success']:
-                    form.save()
-                    username = form.cleaned_data.get('username')
-                    messages.success(request, f'Your account has been created! You are now able to log in')
-                    return redirect('login')
+                form.save()
+                username = form.cleaned_data.get('username')
+                messages.success(request, f'Your account has been created! You are now able to log in')
+                return redirect('login')
             else:
                 messages.warning(request, 'Invalid reCAPTCHA. Please try again.')
     else:
@@ -69,7 +58,6 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
-
 
 
 '''

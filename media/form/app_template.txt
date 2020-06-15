@@ -1,0 +1,61 @@
+PainLessPvP Staff Application
+
+Name:
+{{ name }}
+
+Rank that he applied for:
+{{ rank_choices }}
+
+Email:
+{{ email }}
+
+MC IGN:
+{{ ign }}
+
+Age:
+{{ age }}
+
+Timezone:
+{{ timezone }}
+
+Time spend:
+{{ time_spend }}
+
+Why do you want to be staff:
+{{ why_do_u_want_to_be_staff }}
+
+Why did he choose us:
+{{ why_us }}
+
+{% if rank_choices == 'dev' %}
+
+What kind of dev he is:
+{{ kind_of_dev }}
+
+His creations:
+{{ dev_creations }}
+
+{% elif rank_choices == 'mod' %}
+How he/she will deal with a case:
+{{ mod_how_will_deal_with_a_case }}
+
+His/her previous experiences:
+{{ mod_previous_experiences }}
+
+{% elif rank_choices == 'helper' %}
+How he/she will deal with a case:
+{{ helper_how_will_deal_with_a_case }}
+His/her previous experiences:
+{{ helper_previous_experiences }}
+
+{% elif rank_choices == 'builder' %}
+His/her previous experiences:
+{{ builder_previous_build_experiences }}
+
+One of his best builds:
+{{ builder_one_of_best_builds }}
+
+
+{% endif %}
+
+This is a confirmed email sended by PainLessPvP.
