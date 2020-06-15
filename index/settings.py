@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'FDGLJKGGUIFSUOIFavghjkzxlhjkcKHJQUIY@#OUIGCF%*&*)@(&*JHSGDHL:hguyfdakju!tfgdhjksgfhjksghdjfkjsdhfhsdfkjghcsazhnjvkgjeasdo2ryuif'
+SECRET_KEY = 'x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -161,7 +161,7 @@ LOGIN_URL = 'login'
 # Google Recaptcha
 
 RECAPTCHA_SITE_KEY = "6LfCbOkUAAAAABdOaaPpp-nOwajwCqP5Yvy3cui1"
-RECAPTCHA_SECRET_KEY = "6LfCbOkUAAAAACmf6F9HmbjYbDTu6tIDJS6O4x_k"
+RECAPTCHA_SECRET_KEY = "x"
 
 
 
@@ -170,7 +170,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp-relay.sendinblue.com'
 EMAIL_PORT = 587  # 587 when u not have installed tls
 EMAIL_HOST_USER = 'aineas.vasiliou@gmail.com'
-EMAIL_HOST_PASSWORD = 'D7kIsf3nWzYpFOAB'
+EMAIL_HOST_PASSWORD = 'x'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'no-reply <noreply@painlesspvp.ml>'
 
@@ -180,7 +180,7 @@ DEFAULT_FROM_EMAIL = 'no-reply <noreply@painlesspvp.ml>'
 
 #Sentry.io
 sentry_sdk.init(
-    dsn="https://f9665ad42f244c0ab754c2ab63652916@o377866.ingest.sentry.io/5200543",
+    dsn="https://x@o377866.ingest.sentry.io/5200543",
     integrations=[DjangoIntegration()],
 
     # If you wish to associate users to errors (assuming you are using
